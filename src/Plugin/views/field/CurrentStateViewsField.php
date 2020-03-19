@@ -4,7 +4,6 @@ namespace Drupal\views_cm_current_state\Plugin\views\field;
 
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\content_moderation\ModerationInformationInterface;
-use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Security\TrustedCallbackInterface;
 use Drupal\views\Plugin\views\field\FieldPluginBase;
 use Drupal\views\ResultRow;
@@ -94,12 +93,6 @@ class CurrentStateViewsField extends FieldPluginBase implements TrustedCallbackI
     $options = parent::defineOptions();
     $options['hide_alter_empty'] = ['default' => FALSE];
     return $options;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function buildOptionsForm(&$form, FormStateInterface $form_state) {
   }
 
   /**
