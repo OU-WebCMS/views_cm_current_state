@@ -106,9 +106,16 @@ class CurrentStateViewsField extends FieldPluginBase implements TrustedCallbackI
     if (!empty($get_latest_revision_entity)) {
       $entity = $get_latest_revision_entity;
     }
-    $current_state = $this->moderationInformation->getWorkflowForEntity($entity)->getTypePlugin()
-      ->getState($entity->moderation_state->value)->label();
-    return $current_state;
+    if (!empty($entity->moderation_state->value)) {
+      $current_state = $this->moderationInformation->getWorkflowForEntity($entity)->getTypePlugin()->getState($entity->moderation_state->value)->label();
+      return $current_state;
+    }
+    else if ($entity->isPublished()) {
+      return $this->t('Published');
+    }
+    else {
+      return $this->t('Unpublished');
+    }
   }
 
 }
