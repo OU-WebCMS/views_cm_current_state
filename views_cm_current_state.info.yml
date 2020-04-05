@@ -4,5 +4,5 @@ description: 'This module provides the views field, to get the current state of 
 core: 8.x
 package: 'views'
 dependencies:
-  - views
-  - content_moderation
+  - drupal:views
+  - drupal:content_moderation
