@@ -69,7 +69,7 @@ class CurrentStateViewsField extends FieldPluginBase implements TrustedCallbackI
    * {@inheritdoc}
    */
   public static function trustedCallbacks() {
-    return ['render'];
+    return ['render', 'preRenderAddFieldsetMarkup'];
   }
 
   /**
