@@ -1,0 +1,9 @@
+{
+    "name": "drupal/views_cm_current_state",
+    "description": "This module provides the views field, to get the current state of the content from content moderation.",
+    "type": "drupal-module",
+    "license": "GPL-2.0-or-later",
+    "require": {
+        "drupal/core": "^9 || ^10"
+    }
+}
